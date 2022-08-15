@@ -1,0 +1,24 @@
+<div class="container pt-5 pb-5">
+    <div class="row">
+        <div class="col text-center" *ngIf="userData">
+            <h1 class="pe-5" style="display: inline;">{{userData?.name || userData?.login}}</h1>
+            <img style="width: 60px; border-radius: 100%;" [src]="userData?.avatar_url" alt="Place image title">
+        </div>
+    </div>
+    <div class="row mt-1 pb-3">
+        <div class="col text-center" *ngIf="userData?.location">
+            <label class="me-2">Location: </label>
+            <span>{{userData?.location}}</span>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12 col-lg-6 text-center border border-dark pt-3 pb-3 overflow-hidden" *ngIf="userData">
+            <ul style="text-align: left;">
+                <app-user-display-info [userData]="userData"></app-user-display-info>
+            </ul>
+        </div>
+        <div class="col-md-12 col-lg-6 text-center border border-dark pt-3 pb-3 overflow-hidden" *ngIf="userRepos">
+            <app-user-display-repos [userRepos]="userRepos"></app-user-display-repos>
+        </div>
+    </div>
+</div>

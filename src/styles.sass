@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+@mixin baseStyle
+    height: 100vh
+    background: gray
+
+html
+    @include baseStyle
+
+    body
+        @include baseStyle

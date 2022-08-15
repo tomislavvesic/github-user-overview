@@ -1,0 +1,24 @@
+<div class="container h-25 w-50">
+    <div class="row h-100 align-items-center">
+        <div>
+            <form class="d-flex" onkeypress="return event.keyCode != 13">
+                <input type="text" #userSearch (keyup.enter)="searchGithubUser(userSearch.value)"
+                    class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button type='button' (click)="searchGithubUser(userSearch.value)"
+                    class="btn btn-success">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngIf="githubUsers">
+            <ul style="margin: 0 auto;" class="list-group w-50 text-center">
+                <li class="list-group-item" *ngFor="let user of githubUsers">
+                    <a [routerLink]="['/user', user.login]" style="text-decoration: none;">
+                        <span class="pe-5">{{user.login}}</span>
+                        <img style="width: 30px; border-radius: 100%;" [src]="user.avatar_url" alt="Place image title">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

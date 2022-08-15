@@ -1,0 +1,56 @@
+<ng-container *ngFor="let repo of userRepos, let i = index">
+    <button (click)="repoInfo = !repoInfo; showIndex = i" class="btn btn-dark w-100 mb-1">
+        {{repo.name}}
+    </button>
+    <div *ngIf="repoInfo && showIndex === i">
+        <div class="row" style="text-align: left;">
+            <div class="col-6">
+                <div>
+                    <b><label class="me-2">Id: </label></b>
+                    <span>{{repo.id}}</span>
+                </div>
+                <div>
+                    <b><label class="me-2">Size: </label></b>
+                    <span>{{repo.size}}</span>
+                </div>
+                <div>
+                    <b><label class="me-2">Forks: </label></b>
+                    <span>{{repo.forks}}</span>
+                </div>
+                <div>
+                    <b><label class="me-2">Watchers: </label></b>
+                    <span>{{repo.watchers}}</span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div>
+                    <b><label class="me-2">Private: </label></b>
+                    <span>{{repo.private}}</span>
+                </div>
+                <div>
+                    <b><label class="me-2">Has Issues: </label></b>
+                    <span>{{repo.has_issues}}</span>
+                </div>
+                <div>
+                    <b><label class="me-2">Open Issues: </label></b>
+                    <span>{{repo.open_issues}}</span>
+                </div>
+                <div>
+                    <b><label class="me-2">Repo Url: </label></b>
+                    <span><a style="text-decoration: none; color: lightblue;" target="_blank"
+                            href="{{repo.html_url}}">Click here</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3 mt-3">
+            <div class="col-12">
+                <div>
+                    <b>
+                        <div>Description</div>
+                    </b>
+                    <span>{{repo.description}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,6 @@
+<ng-container *ngFor="let data of userData | keyvalue">
+    <li style="list-style-type: none;" *ngIf="data.key && data.value">
+        <b><span>{{data.key}}: </span></b>
+        <span>{{data.value}}</span>
+    </li>
+</ng-container>
