@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GithubUserOverview
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# github-user-overview
+Ability to search and view github users | testing of github api
+>>>>>>> e5c18b8476c4ea8c6d54a40c2a2e22d9f504c889
