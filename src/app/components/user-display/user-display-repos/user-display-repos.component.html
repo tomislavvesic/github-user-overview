@@ -2,7 +2,7 @@
     <button (click)="repoInfo = !repoInfo; showIndex = i" class="btn btn-dark w-100 mb-1">
         {{repo.name}}
     </button>
-    <div *ngIf="repoInfo && showIndex === i">
+    <div id="dropDown" *ngIf="repoInfo && showIndex === i">
         <div class="row" style="text-align: left;">
             <div class="col-6">
                 <div>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="row mb-3 mt-3">
-            <div class="col-12">
+            <div *ngIf="repo.description;else repoNotFound" class="col-12">
                 <div>
                     <b>
                         <div>Description</div>
@@ -54,3 +54,7 @@
         </div>
     </div>
 </ng-container>
+
+<ng-template #repoNotFound>
+    <p>Repo description was not found</p>
+</ng-template>

@@ -1,0 +1,16 @@
+@mixin usercontent
+    overflow: hidden
+    text-align: center
+    border: 2px inset black
+
+.contentinfo-left
+    @include usercontent
+    border-top-left-radius: 20px
+    border-bottom-left-radius: 20px
+    border-right: none
+
+.contentinfo-right
+    @include usercontent
+    border-top-right-radius: 20px
+    border-bottom-right-radius: 20px
+    border-left: 1px solid #333
